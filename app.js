@@ -63,9 +63,18 @@ function createManager(){
         },
         {
             type: "input",
-            name:
-        }
+            name: "email",
+            message: "Enter their work email address",
+            validate: emailValidate
+        },
     ])
+}
+
+function catchEmpty (input){
+    if (input === ""){
+        return "Please enter requested information"
+    } 
+    else return true
 }
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
