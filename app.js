@@ -125,6 +125,41 @@ function createEngineer (){
         avengersAssemble()
     })
 }
+
+function createIntern(){
+    inquirer.prompt ([
+        {
+            type: "input",
+            name:"name",
+            message: "What is this Intern's name?",
+            validate: catchEmpty  
+        },
+        {
+            type:"input",
+            name: "id",
+            message: "Enter their employee id",
+            validate: checkId
+
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "Enter their work email address",
+            validate: emailValidate
+        },
+        {
+            type: "input",
+            name: "school",
+            message: "What is their alma mater?",
+            validate: catchEmpty
+        }
+    ])
+    .then(input => {
+        let intern = new Intern (input.name, input.id, input.email, input.school)
+        teamMembers.push(intern)
+        avengersAssemble()
+    })
+}
 function catchEmpty (input){
     if (input === ""){
         return "Please enter requested information"
