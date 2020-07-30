@@ -76,6 +76,17 @@ function catchEmpty (input){
     } 
     else return true
 }
+
+function emailValidate (input) {
+    valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+
+    if (input === valid){
+        return true
+    }
+    else {
+        return "Please enter a valid email"
+    }
+}
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
