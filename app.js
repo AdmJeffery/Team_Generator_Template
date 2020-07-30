@@ -93,9 +93,37 @@ function createManager(){
 function createEngineer (){
     inquirer.prompt ([
         {
+            type: "input",
+            name:"name",
+            message: "What is this Engineer's name?",
+            validate: catchEmpty 
+        },
+        {
+            type:"input",
+            name: "id",
+            message: "Enter their employee id",
+            validate: checkId
 
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "Enter their work email address",
+            validate: emailValidate
+        },
+        {
+            type: "input",
+            name: "github",
+            message:"What is their GitHub username?",
+            validate: catchEmpty
         }
+
     ])
+    .then(input => {
+        let engineer = new Engineer (input.name, input.id, input.email, input.github)
+        teamMembers.push(engineer)
+        avengersAssemble()
+    })
 }
 function catchEmpty (input){
     if (input === ""){
