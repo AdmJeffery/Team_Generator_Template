@@ -15,8 +15,10 @@ const render = require("./lib/htmlRenderer");
 // and to create objects for each team member (using the correct classes as blueprints!)
 
 //function to begin inquirer input
-avengersAssemble();
+
 const teamMembers= [];
+const givenId = {};
+
 
 function avengersAssemble () {
     console.log("---------------");
@@ -62,6 +64,13 @@ function createManager(){
 
         },
         {
+            type:"input",
+            name: "id",
+            message: "Enter their employee id",
+            validate: checkId
+
+        },
+        {
             type: "input",
             name: "email",
             message: "Enter their work email address",
@@ -70,6 +79,13 @@ function createManager(){
     ])
 }
 
+function createEngineer (){
+    inquirer.prompt ([
+        {
+
+        }
+    ])
+}
 function catchEmpty (input){
     if (input === ""){
         return "Please enter requested information"
@@ -77,14 +93,23 @@ function catchEmpty (input){
     else return true
 }
 
-function emailValidate (input) {
+function emailValidate (email) {
     valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
 
-    if (input === valid){
+    if (valid){
         return true
     }
     else {
         return "Please enter a valid email"
+    }
+}
+
+function checkId (id) {
+    if (givenId[id] || id === "") {
+        return "Please enter a valid employee id"
+    }
+    else {
+        return true
     }
 }
 // After the user has input all employees desired, call the `render` function (required
@@ -106,3 +131,4 @@ function emailValidate (input) {
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
+avengersAssemble();
