@@ -23,7 +23,49 @@ function avengersAssemble () {
     console.log("It's time to assemble...your team members. Fill out the questions below.")
 
     inquirer
-        .prompt 
+        .prompt ([
+            {
+                type: "list",
+                name: "role",
+                message: "Select a role for this team member.",
+                choices: ["Manager", "Engineer", "Intern", "No Further Members"]
+            }
+        ])
+        .then(input => {
+            switch (input.role) {
+                case "Manager" :
+                    createManager();
+                    break;
+                
+                case "Engineer":
+                    createEngineer();
+                    break;
+
+                case "Intern":
+                    createIntern();
+                    break;
+                
+                case "No Further Members":
+                    render(teamTotal)
+                    writeHTML();
+            }
+        })
+}
+
+function createManager(){
+    inquirer.prompt([
+        {
+            type: "input",
+            name:"name",
+            message: "What is this Manager's name?",
+            validate: catchEmpty
+
+        },
+        {
+            type: "input",
+            name:
+        }
+    ])
 }
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
