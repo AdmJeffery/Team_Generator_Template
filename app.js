@@ -76,7 +76,18 @@ function createManager(){
             message: "Enter their work email address",
             validate: emailValidate
         },
+        {
+            type: "input",
+            name: "officeNumber",
+            message: "What is this manager's office number?",
+            validate: catchEmpty
+        }
     ])
+    .then (input => {
+        let manager = new Manager (input.name, input.id, input.email, input.officeNumber);
+        teamMembers.push(manager)
+        avengersAssemble()
+    })
 }
 
 function createEngineer (){
