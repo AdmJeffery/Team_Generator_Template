@@ -84,7 +84,7 @@ function createManager(){
         }
     ])
     .then (input => {
-        console.log(input)
+        
         let manager = new Manager (input.name, input.id, input.email, input.officeNumber);
         teamMembers.push(manager)
         avengersAssemble()
@@ -121,7 +121,7 @@ function createEngineer (){
 
     ])
     .then(input => {
-        console.log(input)
+        
         let engineer = new Engineer (input.name, input.id, input.email, input.github)
         teamMembers.push(engineer)
         avengersAssemble()
@@ -157,7 +157,7 @@ function createIntern(){
         }
     ])
     .then(input => {
-        console.log(input)
+        
         let intern = new Intern (input.name, input.id, input.email, input.school)
         teamMembers.push(intern)
         avengersAssemble()
@@ -192,6 +192,8 @@ function checkId (id) {
 }
 
 function writeHTML() {
-    console.log("Just a Test")
+    fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
+
+    console.log("Check the output folder to view your team html.")
 }
 avengersAssemble();
