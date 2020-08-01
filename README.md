@@ -2,8 +2,14 @@
 
 ## Description 
 The Team Generator Template is a program that uses node and npms in order to generate an html page that displays team members, their position, and their personal information. The program makes use of both inquirer and inherited constructors in order to gather and display info.
+
 ## Table of Contents
-* [Instructions]
+* [Instructions](#instructions)
+* [Tutorial](#tutorial)
+* [Takeaways](#takeaways)
+* [Acceptance](#acceptance)
+
+
 ## Instructions
 * You'll first need to install inquirer for this program to work.
 * In your command line terminal run the command **node app.js**. You will be presented with a number of prompts.
