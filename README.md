@@ -22,8 +22,11 @@ The Team Generator Template is a program that uses node and npms in order to gen
 
 The animated gif below shows how to use this program.
 
+![Gif](assets/Team_Generator_Walkthru.gif)
 
 If you would like to see the video in full, click on the link below.
+
+![Walkthru](#https://drive.google.com/file/d/1STcld8X7y5L3Cae0w5PDvxbF0ctu9Zkw/view)
 
 ## Takeaways
 The main takeaway from this assignment for me is the conceptualization of how inheritance works. I am fairly confident on my ability to create new constructors and inherit them correctly. 
