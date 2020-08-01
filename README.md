@@ -16,6 +16,8 @@ The Team Generator Template is a program that uses node and npms in order to gen
 * Answer the prompts as they appear. This program will allow you to add Managers, Engineers, and Interns
 * Once finished, select the option **No Further Members**. The program will generate a new html in the output folder.
 
+![Finished_Product](assets/Finished.png)
+
 ## Tutorial
 
 The animated gif below shows how to use this program.
@@ -29,3 +31,5 @@ The main takeaway from this assignment for me is the conceptualization of how in
 ## Acceptance
 
 Shown below is the acceptance criteria for this assignment.
+
+![Acceptance](assets/Acceptance.png)
